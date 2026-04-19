@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <!-- Placeholder: Common QWeb template overrides. -->
+
+    <!--
+    Example: define a new template
+    <t t-name="wvse_odoo_health_monitor.ExampleTemplate" owl="1">
+        <div class="o_wvse_odoo_health_monitor_example">
+            Example template content
+        </div>
+    </t>
+    -->
+
+    <!--
+    Example: extend an existing Odoo template
+    <t t-inherit="web.SomeTemplate" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[contains(@class, 'o_target_class')]" position="inside">
+            <span>Custom content</span>
+        </xpath>
+    </t>
+    -->
+</templates>

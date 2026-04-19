@@ -1,0 +1,191 @@
+Module Structure Reference
+========================
+
+Module Name : wvse_odoo_health_monitor
+Version     : 15.0.1.0.0
+Root Folder : wvse_odoo_health_monitor
+Migration   : upgrades/15.0.1.0.0/
+
+wvse_odoo_health_monitor/
+├── __init__.py
+├── __manifest__.py
+├── hooks.py
+├── README.md
+├── LICENSE
+│
+├── doc/
+│   ├── README.md
+│   └── structure/
+│       ├── module_structure.txt
+│       └── manifest_reference.py
+│
+├── controllers/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── portal.py
+│   ├── api.py
+│   └── webhook.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── wvse_model.py
+│   ├── wvse_model_line.py
+│   ├── res_config_settings.py
+│   ├── res_company.py
+│   ├── res_users.py
+│   ├── res_partner.py
+│   ├── mail_thread_mixin.py
+│   └── abstract_models.py
+│
+├── wizard/
+│   ├── __init__.py
+│   ├── wvse_wizard.py
+│   ├── wvse_batch_wizard.py
+│   ├── wvse_wizard_views.xml
+│   └── wvse_batch_wizard_views.xml
+│
+├── report/
+│   ├── __init__.py
+│   ├── wvse_report.py
+│   ├── wvse_report_templates.xml
+│   ├── wvse_report_actions.xml
+│   ├── wvse_report_paperformat.xml
+│   └── wvse_label_report.xml
+│
+├── security/
+│   ├── ir.model.access.csv
+│   ├── wvse_odoo_health_monitor_groups.xml
+│   ├── wvse_odoo_health_monitor_security.xml
+│   └── ir_rule.xml
+│
+├── views/
+│   ├── menus.xml
+│   ├── actions.xml
+│   ├── wvse_model_views.xml
+│   ├── wvse_model_form_views.xml
+│   ├── wvse_model_tree_views.xml
+│   ├── wvse_model_kanban_views.xml
+│   ├── wvse_model_search_views.xml
+│   ├── wvse_model_calendar_views.xml
+│   ├── wvse_model_pivot_views.xml
+│   ├── wvse_model_graph_views.xml
+│   ├── wvse_model_activity_views.xml
+│   ├── wvse_model_cohort_views.xml
+│   ├── wvse_model_dashboard_views.xml
+│   ├── res_config_settings_views.xml
+│   ├── portal_templates.xml
+│   ├── website_templates.xml
+│   ├── snippets.xml
+│   └── assets.xml
+│
+├── data/
+│   ├── ir_sequence_data.xml
+│   ├── ir_cron_data.xml
+│   ├── ir_actions_server.xml
+│   ├── ir_config_parameter.xml
+│   ├── mail_template_data.xml
+│   ├── mail_activity_type_data.xml
+│   ├── report_paperformat_data.xml
+│   ├── web_tour_data.xml
+│   ├── decimal_precision_data.xml
+│   ├── wvse_odoo_health_monitor_data.xml
+│   ├── wvse_odoo_health_monitor_demo_bridge.xml
+│   └── wvse_odoo_health_monitor_onboarding.xml
+│
+├── demo/
+│   ├── demo.xml
+│   ├── wvse_model_demo.xml
+│   └── demo_users.xml
+│
+├── i18n/
+│   ├── en_US.po
+│   ├── pt_BR.po
+│   ├── es.po
+│   └── wvse_odoo_health_monitor.pot
+│
+├── static/
+│   ├── description/
+│   │   ├── icon.png
+│   │   ├── index.html
+│   │   ├── banner.png
+│   │   ├── screenshot_01.png
+│   │   ├── screenshot_02.png
+│   │   ├── screenshot_03.png
+│   │   └── video_preview.png
+│   │
+│   ├── src/
+│   │   ├── js/
+│   │   │   ├── backend.js
+│   │   │   ├── frontend.js
+│   │   │   ├── portal.js
+│   │   │   ├── website.js
+│   │   │   ├── fields/
+│   │   │   │   └── wvse_custom_field.js
+│   │   │   ├── views/
+│   │   │   │   └── wvse_custom_view.js
+│   │   │   ├── components/
+│   │   │   │   ├── wvse_component.js
+│   │   │   │   └── wvse_dialog.js
+│   │   │   ├── services/
+│   │   │   │   └── wvse_service.js
+│   │   │   ├── patches/
+│   │   │   │   └── some_patch.js
+│   │   │   └── utils/
+│   │   │       └── helpers.js
+│   │   │
+│   │   ├── scss/
+│   │   │   ├── backend.scss
+│   │   │   ├── frontend.scss
+│   │   │   ├── portal.scss
+│   │   │   ├── website.scss
+│   │   │   └── variables.scss
+│   │   │
+│   │   ├── css/
+│   │   │   └── legacy.css
+│   │   │
+│   │   ├── xml/
+│   │   │   ├── templates.xml
+│   │   │   ├── components.xml
+│   │   │   ├── dialogs.xml
+│   │   │   └── qweb/
+│   │   │       ├── common.xml
+│   │   │       ├── backend.xml
+│   │   │       ├── frontend.xml
+│   │   │       ├── portal.xml
+│   │   │       └── website.xml
+│   │   │
+│   │   ├── img/
+│   │   │   ├── icon.svg
+│   │   │   ├── logo.svg
+│   │   │   ├── illustration.png
+│   │   │   └── icons/
+│   │   │
+│   │   └── lib/
+│   │       └── third_party_library/
+│   │           ├── lib.js
+│   │           └── lib.css
+│   │
+│   └── tests/
+│       ├── helpers/
+│       │   └── test_helpers.js
+│       ├── tours/
+│       │   └── wvse_odoo_health_monitor_tour.js
+│       └── mock_server/
+│           └── mock_data.js
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_models.py
+│   ├── test_flows.py
+│   ├── test_security.py
+│   ├── test_access_rights.py
+│   ├── test_controllers.py
+│   ├── test_reports.py
+│   ├── test_tours.py
+│   └── common.py
+│
+└── upgrades/
+    └── 15.0.1.0.0/
+        ├── pre-001-prepare.py
+        ├── post-001-migrate.py
+        └── end-001-cleanup.py

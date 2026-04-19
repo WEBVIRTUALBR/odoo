@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mail_template_wvse_health_summary" model="mail.template">
+        <field name="name">Webvirtual Odoo Health Summary</field>
+        <field name="model_id" ref="wvse_odoo_health_monitor.model_wvse_health_run"/>
+        
+        <field name="subject">[Webvirtual] Resumo de Saúde do Portal - {{ object.company_id.name }}</field>
+        <field name="email_from">{{ (user.email_formatted or '') }}</field>
+        <field name="email_to">{{ object.env['ir.config_parameter'].sudo().get_param('wvse_health.support_email', 'support@webvirtual.com.br') }}</field>
+
+        <field name="body_html" type="html">
+            <div style="margin:0; padding:0;">
+                <p>Olá,</p>
+                <p>Segue o resumo do Health Check:</p>
+
+                <div style="margin:16px 0;">
+                    <t t-if="object.summary_html">
+                        <t t-out="object.summary_html"/>
+                    </t>
+                    <t t-else="">
+                        <p>(sem resumo)</p>
+                    </t>
+                </div>
+
+                <p style="color:#6b7280; font-size:12px; margin-top:16px;">
+                    ID da Execução: <t t-esc="object.id"/>
+                    &#8226; Início: <t t-esc="object.started_on"/>
+                    &#8226; Término: <t t-esc="object.finished_on"/>
+                </p>
+            </div>
+        </field>
+
+        <field name="auto_delete" eval="True"/>
+    </record>
+</odoo>
