@@ -1,5 +1,6 @@
+\
 #!/usr/bin/env python3
-"""Generate repository metadata by scanning Odoo module manifests."""
+"""Generate repository README metadata by scanning Odoo module manifests."""
 
 from __future__ import annotations
 
@@ -68,27 +69,25 @@ def iter_manifest_paths(root: Path) -> list[Path]:
     return sorted(manifests)
 
 
-def shorten_text(value: Any, max_len: int = 240) -> str:
-    if value is None:
-        return "-"
-    text = str(value).strip().replace("\r\n", "\n").replace("\r", "\n")
-    text = " ".join(part for part in text.split())
-    if not text:
-        return "-"
-    if len(text) <= max_len:
-        return text
-    return text[: max_len - 1].rstrip() + "…"
-
-
-def to_bool_text(value: Any) -> str:
-    return "Yes" if bool(value) else "No"
-
-
 def normalize_text(value: Any) -> str:
     if value is None:
         return "-"
     text = str(value).strip()
     return text if text else "-"
+
+
+def shorten_text(value: Any, max_len: int = 280) -> str:
+    text = normalize_text(value)
+    if text == "-":
+        return text
+    normalized = " ".join(text.replace("\r\n", "\n").replace("\r", "\n").split())
+    if len(normalized) <= max_len:
+        return normalized
+    return normalized[: max_len - 1].rstrip() + "…"
+
+
+def to_bool_text(value: Any) -> str:
+    return "Yes" if bool(value) else "No"
 
 
 def format_price(price: Any, currency: Any) -> str:
@@ -103,26 +102,19 @@ def format_price(price: Any, currency: Any) -> str:
 
 
 def markdown_escape(value: Any) -> str:
-    text = normalize_text(value).replace("|", "\\|").replace("\n", "<br>")
-    return text
+    return normalize_text(value).replace("|", "\\|").replace("\n", "<br>")
 
 
 def extract_module_record(root: Path, manifest_path: Path) -> dict[str, Any]:
     module_dir = manifest_path.parent
     manifest = parse_manifest(manifest_path)
-    technical_name = module_dir.name
-    relative_dir = module_dir.relative_to(root).as_posix()
-
-    summary = shorten_text(manifest.get("summary"))
-    description = shorten_text(manifest.get("description"), max_len=1000)
 
     return {
-        "technical_name": technical_name,
-        "relative_dir": relative_dir,
+        "technical_name": module_dir.name,
+        "relative_dir": module_dir.relative_to(root).as_posix(),
         "manifest_path": manifest_path.relative_to(root).as_posix(),
         "name": normalize_text(manifest.get("name")),
-        "summary": summary,
-        "description": description,
+        "summary": shorten_text(manifest.get("summary")),
         "version": normalize_text(manifest.get("version")),
         "category": normalize_text(manifest.get("category")),
         "author": normalize_text(manifest.get("author")),
@@ -134,7 +126,6 @@ def extract_module_record(root: Path, manifest_path: Path) -> dict[str, Any]:
         "price": manifest.get("price"),
         "currency": normalize_text(manifest.get("currency")),
         "display_price": format_price(manifest.get("price"), manifest.get("currency")),
-        "depends": manifest.get("depends", []) if isinstance(manifest.get("depends", []), list) else [],
         "website": normalize_text(manifest.get("website")),
         "support": normalize_text(manifest.get("support")),
     }
@@ -153,7 +144,6 @@ def scan_modules(root: Path) -> list[dict[str, Any]]:
                     "manifest_path": manifest_path.relative_to(root).as_posix(),
                     "name": "Manifest parsing error",
                     "summary": shorten_text(exc),
-                    "description": shorten_text(exc),
                     "version": "-",
                     "category": "-",
                     "author": "-",
@@ -165,7 +155,6 @@ def scan_modules(root: Path) -> list[dict[str, Any]]:
                     "price": None,
                     "currency": "-",
                     "display_price": "-",
-                    "depends": [],
                     "website": "-",
                     "support": "-",
                 }
@@ -173,89 +162,9 @@ def scan_modules(root: Path) -> list[dict[str, Any]]:
     return sorted(modules, key=lambda item: (item["technical_name"], item["relative_dir"]))
 
 
-def build_tree(root_path: Path, max_depth: int = 5, max_entries_per_dir: int = 50) -> str:
-    lines: list[str] = [root_path.name + "/"]
-
-    def visit(path: Path, prefix: str, depth: int) -> None:
-        if depth >= max_depth:
-            lines.append(prefix + "└── ...")
-            return
-
-        entries = [
-            entry
-            for entry in sorted(path.iterdir(), key=lambda item: (not item.is_dir(), item.name.lower()))
-            if not entry.name.startswith(".") and entry.name not in IGNORED_DIR_NAMES
-        ]
-
-        if len(entries) > max_entries_per_dir:
-            displayed_entries = entries[:max_entries_per_dir]
-            truncated = len(entries) - max_entries_per_dir
-        else:
-            displayed_entries = entries
-            truncated = 0
-
-        for index, entry in enumerate(displayed_entries):
-            connector = "└── " if index == len(displayed_entries) - 1 and truncated == 0 else "├── "
-            lines.append(prefix + connector + entry.name + ("/" if entry.is_dir() else ""))
-            if entry.is_dir():
-                child_prefix = prefix + ("    " if connector == "└── " else "│   ")
-                visit(entry, child_prefix, depth + 1)
-
-        if truncated:
-            lines.append(prefix + f"└── ... ({truncated} more entries)")
-
-    visit(root_path, "", 0)
-    return "\n".join(lines)
-
-
-def render_module_inventory_markdown(modules: list[dict[str, Any]]) -> str:
-    header = (
-        "| Technical Name | Module Name | Version | Category | License | Application | "
-        "Installable | Auto Install | Price | Author | Maintainer |\n"
-        "|---|---|---:|---|---|---|---|---|---:|---|---|\n"
-    )
-    rows = []
-    for module in modules:
-        rows.append(
-            "| "
-            + " | ".join(
-                [
-                    markdown_escape(module["technical_name"]),
-                    markdown_escape(module["name"]),
-                    markdown_escape(module["version"]),
-                    markdown_escape(module["category"]),
-                    markdown_escape(module["license"]),
-                    to_bool_text(module["application"]),
-                    to_bool_text(module["installable"]),
-                    to_bool_text(module["auto_install"]),
-                    markdown_escape(module["display_price"]),
-                    markdown_escape(module["author"]),
-                    markdown_escape(module["maintainer"]),
-                ]
-            )
-            + " |"
-        )
-    return header + ("\n".join(rows) if rows else "| - | No modules found | - | - | - | - | - | - | - | - | - |")
-
-
-def render_module_inventory_plain(modules: list[dict[str, Any]]) -> str:
-    if not modules:
-        return "- No modules found."
-
-    lines = []
-    for module in modules:
-        lines.append(
-            f"- {module['technical_name']}: {module['name']} | "
-            f"Version={module['version']} | Category={module['category']} | "
-            f"License={module['license']} | Application={to_bool_text(module['application'])} | "
-            f"Installable={to_bool_text(module['installable'])} | Auto Install={to_bool_text(module['auto_install'])} | "
-            f"Price={module['display_price']}"
-        )
-    return "\n".join(lines)
-
-
 def build_repository_tree(root: Path) -> str:
     lines = [root.name + "/"]
+
     entries = [
         entry
         for entry in sorted(root.iterdir(), key=lambda item: (not item.is_dir(), item.name.lower()))
@@ -268,43 +177,42 @@ def build_repository_tree(root: Path) -> str:
     return "\n".join(lines)
 
 
-def render_module_cards(modules: list[dict[str, Any]]) -> str:
+def render_module_inventory(modules: list[dict[str, Any]]) -> str:
     if not modules:
-        return "## Module Details\n\nNo modules were found in this repository.\n"
+        return "No modules were found in this repository.\n"
 
-    sections = []
+    blocks: list[str] = []
     for module in modules:
-        depends = ", ".join(module["depends"]) if module["depends"] else "-"
-        module_tree = build_tree(ROOT / module["relative_dir"], max_depth=5, max_entries_per_dir=40)
-        description = module["description"] if module["description"] != "-" else module["summary"]
+        summary = (
+            f"<code>{markdown_escape(module['technical_name'])}</code> | "
+            f"{markdown_escape(module['name'])} | "
+            f"{markdown_escape(module['version'])} | "
+            f"{markdown_escape(module['category'])} | "
+            f"{markdown_escape(module['license'])} | "
+            f"{markdown_escape(module['display_price'])}"
+        )
 
-        section = f"""## {module['name']}
+        body = f"""<details>
+<summary>{summary}</summary>
 
-**Technical Name:** `{module['technical_name']}`  
-**Version:** `{module['version']}`  
-**Category:** `{module['category']}`  
-**License:** `{module['license']}`  
-**Application:** `{to_bool_text(module['application'])}`  
-**Installable:** `{to_bool_text(module['installable'])}`  
-**Auto Install:** `{to_bool_text(module['auto_install'])}`  
-**Price:** `{module['display_price']}`  
-**Author:** `{module['author']}`  
-**Maintainer:** `{module['maintainer']}`  
-**Path:** `{module['relative_dir']}`  
-**Dependencies:** `{depends}`  
+- **Application:** {to_bool_text(module['application'])}
+- **Installable:** {to_bool_text(module['installable'])}
+- **Auto Install:** {to_bool_text(module['auto_install'])}
+- **Author:** {markdown_escape(module['author'])}
+- **Maintainer:** {markdown_escape(module['maintainer'])}
+- **Path:** <code>{markdown_escape(module['relative_dir'])}</code>
+- **Manifest:** <code>{markdown_escape(module['manifest_path'])}</code>
+- **Website:** {markdown_escape(module['website'])}
+- **Support:** {markdown_escape(module['support'])}
+- **Summary:** {markdown_escape(module['summary'])}
 
-### Description
+</details>"""
+        blocks.append(body)
 
-{description}
-
-### Structure Tree
-
-```text
-{module_tree}
-```
-"""
-        sections.append(section.strip())
-    return "\n\n".join(sections) + "\n"
+    legend = (
+        "**Columns:** Technical Name | Module Name | Version | Category | License | Price\n\n"
+    )
+    return legend + "\n\n".join(blocks) + "\n"
 
 
 def main() -> None:
@@ -317,7 +225,7 @@ def main() -> None:
 
     content = f"""# Odoo Apps Repository
 
-Repository-level inventory, legal metadata, and publishing support files for Odoo modules maintained by **Webvirtual**.
+Repository-level inventory, publication support, and legal metadata for Odoo modules maintained by **Webvirtual**.
 
 ## Company Information
 
@@ -350,7 +258,7 @@ odoo@webvirtual.com.br
 
 ## Module Inventory
 
-{render_module_inventory_markdown(modules)}
+{render_module_inventory(modules)}
 
 ## Repository Root Tree
 
@@ -358,15 +266,12 @@ odoo@webvirtual.com.br
 {build_repository_tree(ROOT)}
 ```
 
-## Module Structure Trees
-
-{render_module_cards(modules)}
-
 ## Publication Notes
 
 - This README is generated automatically from all discovered `__manifest__.py` files below the repository root.
 - The technical name is derived from the folder that contains each manifest.
-- The authoritative module metadata remains the information declared inside each manifest.
+- Each module inventory item is collapsed by default to keep the repository README compact.
+- This repository README intentionally excludes per-module structure trees.
 - Repository legal files are generated by `_license.py`, `_copyright.py`, and `_notice.py`.
 
 ---
