@@ -1,0 +1,809 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wvse_odoo_health_monitor
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20220501\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-03 13:24+0000\n"
+"PO-Revision-Date: 2026-03-03 10:29-0300\n"
+"Last-Translator: Support Webvirtual <support@webvirtual.com.br>\n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: wvse_odoo_health_monitor
+#: model:mail.template,body_html:wvse_odoo_health_monitor.mail_template_wvse_health_summary
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Olá,</p>\n"
+"                <p>Segue o resumo do Health Check:</p>\n"
+"                <div style=\"margin: 16px 0px;\">\n"
+"                    {{ object.summary_html | safe if object.summary_html else "
+"'<p>(sem resumo)</p>' | safe }}\n"
+"                </div>\n"
+"                <p style=\"color:#6b7280;font-size:12px; margin-top: 16px;\">\n"
+"                    Run ID: {{ object.id }} • Início: {{ object.started_on }} • "
+"Fim: {{ object.finished_on }}\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Olá,</p>\n"
+"                <p>Segue o resumo do Health Check:</p>\n"
+"                <div style=\"margin: 16px 0px;\">\n"
+"                    {{ object.summary_html | safe if object.summary_html else "
+"'<p>(sem resumo)</p>' | safe }}\n"
+"                </div>\n"
+"                <p style=\"color:#6b7280;font-size:12px; margin-top: 16px;\">\n"
+"                    ID da Execução: {{ object.id }} • Início: {{ object."
+"started_on }} • Término: {{ object.finished_on }}\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_form
+msgid "<span class=\"o_stat_text\">Email</span>"
+msgstr "<span class=\"o_stat_text\">E-mail</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_kanban
+msgid "<span>Failed:</span>"
+msgstr "<span>Falhas:</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_issue_view_kanban
+msgid "<span>Fix:</span>"
+msgstr "<span>Correção:</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_kanban
+msgid "<span>Fixed:</span>"
+msgstr "<span>Corrigidos:</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_issue_view_kanban
+msgid "<span>ID:</span>"
+msgstr "<span>ID:</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_kanban
+msgid "<span>Issues:</span>"
+msgstr "<span>Problemas:</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_issue_view_kanban
+msgid "<span>Model:</span>"
+msgstr "<span>Modelo:</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_kanban
+msgid "<span>Status:</span>"
+msgstr "<span>Status:</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_kanban
+msgid "<span>Triggered:</span>"
+msgstr "<span>Acionado:</span>"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_issue_view_form
+msgid "Apply Fix"
+msgstr "Aplicar Correção"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_form
+msgid "Apply Fixes"
+msgstr "Aplicar Correções"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model,name:wvse_odoo_health_monitor.model_hr_attendance
+msgid "Attendance"
+msgstr "Frequência"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__issue_type__attendance_autoclose
+msgid "Attendance Auto-closed on Check-in"
+msgstr "Frequência Fechada Automaticamente no Check-in"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__issue_type__attendance_open
+msgid "Attendance Missing Check-out"
+msgstr "Frequência com Check-out Pendente"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Attendance is open (missing check_out) from a previous day."
+msgstr "A frequência está aberta (check_out ausente) de um dia anterior."
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Attendance not found."
+msgstr "Frequência não encontrada."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_attendance_autoclose_on_checkin
+msgid "Auto-close Old Attendance on Check-in"
+msgstr "Fechar Automaticamente Frequência Antiga no Check-in"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Auto-close old open attendance before new check-in."
+msgstr "Fechar automaticamente frequência antiga aberta antes de novo check-in."
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_issue_view_form
+msgid "Before/After"
+msgstr "Antes/Depois"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__can_fix
+msgid "Can Fix"
+msgstr "Pode Corrigir"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__company_id
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Company currency is not set."
+msgstr "Moeda da empresa não está configurada."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model,name:wvse_odoo_health_monitor.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configurações"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Could not compute a safe check_out."
+msgstr "Não foi possível calcular um check_out seguro."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__create_uid
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__create_date
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__severity__critical
+msgid "Critical"
+msgstr "Crítico"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_run__triggered_by__cron
+msgid "Cron"
+msgstr "Agendado"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.ui.menu,name:wvse_odoo_health_monitor.wvse_health_menu_dashboard
+msgid "Dashboard"
+msgstr "Painel"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__description
+msgid "Description"
+msgstr "Descrição"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__display_name
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__display_name
+msgid "Display Name"
+msgstr "Nome Exibido"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_run__state__done
+msgid "Done"
+msgstr "Concluído"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_run__state__draft
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_support_email
+msgid "Email address that receives daily health summary."
+msgstr "Endereço de e-mail que recebe o resumo diário de saúde."
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Email that receives daily health summary."
+msgstr "E-mail que recebe o resumo diário de saúde."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__employee_id
+msgid "Employee"
+msgstr "Funcionário"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_autofix_enabled
+msgid "Enable Automatic Fixes (Cron)"
+msgstr "Ativar Correções Automáticas (Agendado)"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Enable automatic safe fixes in daily cron."
+msgstr "Ativar correções automáticas seguras no agendamento diário."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__fix_state__failed
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_run__state__failed
+msgid "Failed"
+msgstr "Falhou"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__failed_total
+msgid "Failed Total"
+msgstr "Total de Falhas"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__finished_on
+msgid "Finished On"
+msgstr "Finalizado Em"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__fix_message
+msgid "Fix Message"
+msgstr "Mensagem de Correção"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_issue_view_form
+msgid "Fix Result"
+msgstr "Resultado da Correção"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__fix_state
+msgid "Fix State"
+msgstr "Estado da Correção"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__fix_state__fixed
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_form
+msgid "Fixed"
+msgstr "Corrigido"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__fixed_by
+msgid "Fixed By"
+msgstr "Corrigido Por"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__fixed_on
+msgid "Fixed On"
+msgstr "Corrigido Em"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__fixed_total
+msgid "Fixed Total"
+msgstr "Total Corrigido"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_health_timezone
+msgid "Health Check Timezone"
+msgstr "Fuso Horário do Health Check"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.actions.act_window,name:wvse_odoo_health_monitor.wvse_health_run_action_kanban
+msgid "Health Dashboard"
+msgstr "Painel de Saúde"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_issue_view_form
+msgid "Health Issue"
+msgstr "Problema de Saúde"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.actions.act_window,name:wvse_odoo_health_monitor.wvse_health_issue_action
+msgid "Health Issues"
+msgstr "Problemas de Saúde"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_form
+#, python-format
+msgid "Health Run"
+msgstr "Execução de Saúde"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Health Run (Cron)"
+msgstr "Execução de Saúde (Agendada)"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Health Run (Manual)"
+msgstr "Execução de Saúde (Manual)"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.actions.act_window,name:wvse_odoo_health_monitor.wvse_health_run_action
+msgid "Health Runs"
+msgstr "Execuções de Saúde"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_ratio_high
+msgid "High Ratio Threshold"
+msgstr "Limite de Proporção Alto"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "High ratio threshold (stored/calculated)."
+msgstr "Limite alto de proporção (armazenado/calculado)."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__id
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__id
+msgid "ID"
+msgstr "ID"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_autofix_enabled
+msgid "If enabled, the daily cron will apply safe fixes automatically."
+msgstr "Se ativado, o agendamento diário aplicará correções seguras automaticamente."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_attendance_autoclose_on_checkin
+msgid ""
+"If enabled, when a user checks in and there is an old open attendance, the module "
+"auto-closes it."
+msgstr ""
+"Se ativado, quando um usuário fizer check-in e houver uma frequência antiga aberta, "
+"o módulo a fechará automaticamente."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_ratio_high
+msgid ""
+"If stored value / calculated value is above this ratio, it is considered 'too "
+"large'."
+msgstr ""
+"Se o valor armazenado / valor calculado estiver acima dessa proporção, é "
+"considerado 'muito grande'."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_ratio_low
+msgid ""
+"If stored value / calculated value is below this ratio, it is considered 'too "
+"small'."
+msgstr ""
+"Se o valor armazenado / valor calculado estiver abaixo dessa proporção, é "
+"considerado 'muito pequeno'."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__severity__info
+msgid "Info"
+msgstr "Informativo"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__issue_type
+msgid "Issue Type"
+msgstr "Tipo de Problema"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__issue_ids
+#: model:ir.ui.menu,name:wvse_odoo_health_monitor.wvse_health_menu_issues
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_form
+msgid "Issues"
+msgstr "Problemas"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__issues_total
+msgid "Issues Total"
+msgstr "Total de Problemas"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue____last_update
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__write_uid
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__write_uid
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__write_date
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_issue.py:0
+#, python-format
+msgid "Linked Record"
+msgstr "Registro Vinculado"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_ratio_low
+msgid "Low Ratio Threshold"
+msgstr "Limite de Proporção Baixo"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Low ratio threshold (stored/calculated)."
+msgstr "Limite baixo de proporção (armazenado/calculado)."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_run__triggered_by__manual
+msgid "Manual"
+msgstr "Manual"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_min_abs_diff_hours
+msgid "Min Absolute Difference (Hours)"
+msgstr "Diferença Absoluta Mínima (Horas)"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_min_abs_diff_minutes
+msgid "Min Absolute Difference (Minutes)"
+msgstr "Diferença Absoluta Mínima (Minutos)"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_min_calc_minutes
+msgid "Min Calculated Minutes"
+msgstr "Mínimo de Minutos Calculados"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_min_abs_diff_hours
+msgid ""
+"Minimum absolute difference (in hours) for unit_amount / unit_amount_dec mismatch "
+"detection."
+msgstr ""
+"Diferença absoluta mínima (em horas) para detecção de divergência em unit_amount / "
+"unit_amount_dec."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_min_abs_diff_minutes
+msgid ""
+"Minimum absolute difference (in minutes) for timer_duration mismatch detection."
+msgstr ""
+"Diferença absoluta mínima (em minutos) para detecção de divergência em "
+"timer_duration."
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Minimum absolute difference in hours for unit_amount mismatch."
+msgstr "Diferença absoluta mínima em horas para divergência em unit_amount."
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Minimum absolute difference in minutes for timer mismatch."
+msgstr "Diferença absoluta mínima em minutos para divergência no timer."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_min_calc_minutes
+msgid ""
+"Minimum calculated duration (in minutes) to consider for timesheet mismatch "
+"detection."
+msgstr ""
+"Duração calculada mínima (em minutos) para considerar na detecção de divergência em "
+"apontamentos."
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Minimum calculated minutes to evaluate."
+msgstr "Mínimo de minutos calculados para avaliar."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__model_name
+msgid "Model"
+msgstr "Modelo"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__new_values_json
+msgid "New Values (JSON)"
+msgstr "Novos Valores (JSON)"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "No fixer for this issue type."
+msgstr "Nenhuma correção definida para este tipo de problema."
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_issue.py:0
+#, python-format
+msgid "No linked record."
+msgstr "Nenhum registro vinculado."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.ui.menu,name:wvse_odoo_health_monitor.wvse_health_root
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Odoo Health"
+msgstr "Saúde do Odoo"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model,name:wvse_odoo_health_monitor.model_wvse_health_issue
+msgid "Odoo Health Issue"
+msgstr "Problema de Saúde do Odoo"
+
+#. module: wvse_odoo_health_monitor
+#: model:res.groups,name:wvse_odoo_health_monitor.group_wvse_health_manager
+msgid "Odoo Health Manager"
+msgstr "Gerente de Saúde do Odoo"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model,name:wvse_odoo_health_monitor.model_wvse_health_run
+msgid "Odoo Health Run"
+msgstr "Execução de Saúde do Odoo"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.actions.act_window,name:wvse_odoo_health_monitor.wvse_health_settings_action
+msgid "Odoo Health Settings"
+msgstr "Configurações de Saúde do Odoo"
+
+#. module: wvse_odoo_health_monitor
+#: model:res.groups,name:wvse_odoo_health_monitor.group_wvse_health_user
+msgid "Odoo Health User"
+msgstr "Usuário de Saúde do Odoo"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__old_values_json
+msgid "Old Values (JSON)"
+msgstr "Valores Antigos (JSON)"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_issue_view_form
+msgid "Open Record"
+msgstr "Abrir Registro"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__fix_state__pending
+msgid "Pending"
+msgstr "Pendente"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__pending_total
+msgid "Pending Total"
+msgstr "Total Pendente"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__project_id
+msgid "Project"
+msgstr "Projeto"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Project department_id is missing."
+msgstr "O campo department_id do projeto está ausente."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__res_id
+msgid "Record ID"
+msgstr "ID do Registro"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__run_id
+msgid "Run"
+msgstr "Execução"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_form
+msgid "Run Checks"
+msgstr "Executar Verificações"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Run is already running."
+msgstr "A execução já está em andamento."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_run__state__running
+msgid "Running"
+msgstr "Em Andamento"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.ui.menu,name:wvse_odoo_health_monitor.wvse_health_menu_runs
+msgid "Runs"
+msgstr "Execuções"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.actions.act_window,help:wvse_odoo_health_monitor.wvse_health_run_action
+msgid "Runs record daily health checks and safe fixes."
+msgstr "Registra verificações diárias de saúde e correções seguras."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.actions.server,name:wvse_odoo_health_monitor.ir_cron_wvse_health_daily_ir_actions_server
+#: model:ir.cron,cron_name:wvse_odoo_health_monitor.ir_cron_wvse_health_daily
+#: model:ir.cron,name:wvse_odoo_health_monitor.ir_cron_wvse_health_daily
+msgid "Webvirtual Health Daily"
+msgstr "Webvirtual Saúde Diário"
+
+#. module: wvse_odoo_health_monitor
+#: model:mail.template,name:wvse_odoo_health_monitor.mail_template_wvse_health_summary
+msgid "Webvirtual Health Daily Summary"
+msgstr "Resumo Diário de Saúde Webvirtual"
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_form
+msgid "Send Email Summary"
+msgstr "Enviar Resumo por E-mail"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.ui.menu,name:wvse_odoo_health_monitor.wvse_health_menu_settings
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__severity
+msgid "Severity"
+msgstr "Severidade"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__fix_state__skipped
+msgid "Skipped"
+msgstr "Ignorado"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid ""
+"Skipped: department_id field is not available on project.task and/or project."
+"project."
+msgstr ""
+"Ignorado: o campo department_id não está disponível em project.task e/ou project."
+"project."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__started_on
+msgid "Started On"
+msgstr "Iniciado Em"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__state
+msgid "State"
+msgstr "Estado"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__summary_html
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.wvse_health_run_view_form
+msgid "Summary"
+msgstr "Resumo"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_res_config_settings__wvse_support_email
+msgid "Support Email"
+msgstr "E-mail de Suporte"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_issue__task_id
+msgid "Task"
+msgstr "Tarefa"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__issue_type__task_department
+msgid "Task Department Missing"
+msgstr "Departamento da Tarefa Ausente"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Task department_id is empty; will mirror project.department_id."
+msgstr "O campo department_id da tarefa está vazio; será espelhado do projeto."
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Task not found."
+msgstr "Tarefa não encontrada."
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_issue.py:0
+#, python-format
+msgid "This issue cannot be fixed automatically."
+msgstr "Este problema não pode ser corrigido automaticamente."
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_issue.py:0
+#, python-format
+msgid "This issue is not linked to a run."
+msgstr "Este problema não está vinculado a uma execução."
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "This run is already running."
+msgstr "Esta execução já está em andamento."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__issue_type__timesheet_currency
+msgid "Timesheet Currency Missing"
+msgstr "Moeda do Apontamento Ausente"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__issue_type__timesheet_hours
+msgid "Timesheet Hours Mismatch"
+msgstr "Divergência de Horas no Apontamento"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Timesheet duration mismatch (safe scope: excludes today)."
+msgstr "Divergência na duração do apontamento (escopo seguro: exclui hoje)."
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "Timesheet line not found."
+msgstr "Linha de apontamento não encontrada."
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Timesheet thresholds"
+msgstr "Limites de Apontamento"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,help:wvse_odoo_health_monitor.field_res_config_settings__wvse_health_timezone
+msgid ""
+"Timezone used to compute 'today' boundaries for safe checks (default: America/"
+"Sao_Paulo)."
+msgstr ""
+"Fuso horário usado para calcular os limites de 'hoje' para verificações seguras "
+"(padrão: America/Sao_Paulo)."
+
+#. module: wvse_odoo_health_monitor
+#: model_terms:ir.ui.view,arch_db:wvse_odoo_health_monitor.view_res_config_settings_wvse_health
+msgid "Timezone used to compute day boundaries for safe checks."
+msgstr "Fuso horário usado para calcular os limites do dia para verificações seguras."
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields,field_description:wvse_odoo_health_monitor.field_wvse_health_run__triggered_by
+msgid "Triggered By"
+msgstr "Acionado Por"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__issue_type__unsupported
+msgid "Unsupported / Skipped"
+msgstr "Não Suportado / Ignorado"
+
+#. module: wvse_odoo_health_monitor
+#: model:ir.model.fields.selection,name:wvse_odoo_health_monitor.selection__wvse_health_issue__severity__warning
+msgid "Warning"
+msgstr "Aviso"
+
+#. module: wvse_odoo_health_monitor
+#: model:mail.template,subject:wvse_odoo_health_monitor.mail_template_wvse_health_summary
+msgid "[Webvirtual] Odoo Health Summary - {{ object.company_id.name }}"
+msgstr "[Webvirtual] Resumo de Saúde do Odoo - {{ object.company_id.name }}"
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "currency_id is NULL on timesheet line."
+msgstr "o campo currency_id é NULL na linha de apontamento."
+
+#. module: wvse_odoo_health_monitor
+#: code:addons/wvse_odoo_health_monitor/models/health_run.py:0
+#, python-format
+msgid "department_id field is missing."
+msgstr "o campo department_id está ausente."

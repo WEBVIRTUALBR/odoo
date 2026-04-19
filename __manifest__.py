@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+{
+    "name": "Webvirtual Health Monitor",
+    "version": "15.0.1.0.0",
+    "summary": "Daily health checks and safe self-healing for timesheets and attendance",
+    "category": "Tools",
+    "author": "Webvirtual",
+    "website": "https://webvirtual.com.br",
+    "license": "LGPL-3",
+    "depends": [
+        "base",
+        "mail",
+        "project",
+        "hr_attendance",
+        "hr_timesheet",
+        #"check_in_location",
+    ],
+    "data": [
+        "security/security.xml",
+        "security/ir.model.access.csv",
+        "data/mail_template.xml",
+        "data/cron.xml",
+        "views/schedule_wizard_views.xml",
+        "views/health_issue_views.xml",
+        "views/health_run_views.xml",
+        "views/res_config_settings_views.xml",
+        "views/menu.xml",
+    ],
+    "application": True,
+    "installable": True,
+}
