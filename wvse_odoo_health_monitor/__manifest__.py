@@ -21,7 +21,7 @@
 {
     'name': 'Webvirtual Health Monitor',
     'summary': 'Short business summary of the Webvirtual Health Monitor main features.',
-    'version': '15.0.1.1.0',
+    'version': '15.0.1.1.1',
     'category': 'Tools',
     'description': """
 Daily health checks and safe self-healing for timesheets and attendance
