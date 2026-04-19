@@ -25,9 +25,9 @@ odoo@webvirtual.com.br
 
 | Metric | Value |
 |---|---:|
-| Modules Found | 2 |
-| Applications | 2 |
-| Installable Modules | 2 |
+| Modules Found | 1 |
+| Applications | 1 |
+| Installable Modules | 1 |
 | Auto Install Enabled | 0 |
 | Distinct Licenses | 1 |
 
@@ -38,7 +38,6 @@ odoo@webvirtual.com.br
 | Technical Name | Module Name | Version | Category | License | Price |
 |---|---|---:|---|---|---:|
 | <code>wvse_odoo_health_monitor</code> | Webvirtual Health Monitor | 15.0.1.1.0 | Tools | OPL-1 | USD 1.49 |
-| <code>wvse_odoo_health_monitor_v2</code> | Webvirtual Health Monitor | 15.0.1.1.0 | Tools | OPL-1 | USD 1.49 |
 
 ### Module Details
 
@@ -58,29 +57,12 @@ odoo@webvirtual.com.br
 
 </details>
 
-<details>
-<summary><strong>wvse_odoo_health_monitor_v2</strong> — Webvirtual Health Monitor</summary>
-
-- **Application:** Yes
-- **Installable:** Yes
-- **Auto Install:** No
-- **Author:** Webvirtual Soluções Empresariais
-- **Maintainer:** Webvirtual
-- **Path:** <code>wvse_odoo_health_monitor_v2</code>
-- **Manifest:** <code>wvse_odoo_health_monitor_v2/__manifest__.py</code>
-- **Website:** https://www.webvirtual.com.br
-- **Support:** odoo@webvirtual.com.br
-- **Summary:** Short business summary of the Webvirtual Health Monitor main features.
-
-</details>
-
 
 ## Repository Root Tree
 
 ```text
 odoo_apps/
 ├── wvse_odoo_health_monitor/
-├── wvse_odoo_health_monitor_v2/
 ├── _copyright.py
 ├── _license.py
 ├── _notice.py
@@ -101,4 +83,4 @@ odoo_apps/
 
 ---
 
-Generated automatically in 2026-04-19 16:15:47.
+Generated automatically in 2026-04-19 16:20:45.
