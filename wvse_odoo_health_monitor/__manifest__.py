@@ -186,7 +186,7 @@ Technical Notes
 
     # Internals images.
     'images': [
-        'static/description/main_screen.gif',
+        #'static/description/main_screen.gif',
         'static/description/wvse_odoo_health_monitor_cover.jpg',
         'static/description/wvse_odoo_health_monitor_screenshot.jpg',
         'static/description/*.png',
