@@ -1,0 +1,56 @@
+ODDO APPS REPOSITORY LICENSE
+==========================
+
+Copyright (C) 2026 Webvirtual Soluções Empresariais LTDA
+
+Repository-level license inventory for Odoo modules maintained by Webvirtual.
+
+Corporate Information
+---------------------
+Legal Name : Webvirtual Soluções Empresariais LTDA
+Public Brand : Webvirtual
+Website : https://www.webvirtual.com.br
+Support Email : odoo@webvirtual.com.br
+General Email : contato@webvirtual.com.br
+Phone 1 : +55 31 97147-4489
+Phone 2 : +55 62 99913-2635
+Address : Av Alameda dos Ipês, 8625 Sala 12-A - Vale Do Sereno, Belo Horizonte, Minas Gerais, 34012-970, Brasil
+
+License Scope
+-------------
+This LICENSE file is a repository-level reference generated from all detected
+`__manifest__.py` files. The authoritative license for each module is the
+`license` field declared in its manifest. If module directories include their
+own license files or third-party notices, those terms must also be respected.
+
+Module License Inventory
+------------------------
+- wvse_odoo_health_monitor: Webvirtual Health Monitor | Version=15.0.1.1.0 | Category=Tools | License=OPL-1 | Application=Yes | Installable=Yes | Auto Install=No | Price=USD 1.49
+
+Applicable License Notes
+------------------------
+OPL-1 Repository Notice
+=======================
+
+This repository contains one or more modules distributed under **OPL-1**
+(the Odoo Proprietary License). Use, installation, maintenance, modification,
+and redistribution are allowed only as expressly granted by the applicable
+commercial agreement, the module manifest, and the Odoo Proprietary License
+terms applicable to the module.
+
+Unless explicitly authorized in writing by the rights holder, you must not:
+- redistribute proprietary module source code or derivative proprietary works;
+- sublicense, resell, publish, or repackage proprietary modules outside the
+  scope of the granted license;
+- remove legal notices, ownership statements, or proprietary legends.
+
+The module manifest remains the authoritative declaration of the license for
+each module.
+
+Maintained By
+-------------
+Webvirtual
+https://www.webvirtual.com.br
+odoo@webvirtual.com.br
+
+Generated automatically in 2026-04-19 15:53:46.

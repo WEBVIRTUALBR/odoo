@@ -1,0 +1,44 @@
+=========================================================
+COPYRIGHT
+=========================================================
+
+Copyright (C) 2026 Webvirtual Soluções Empresariais LTDA
+All rights reserved unless otherwise granted by the applicable license.
+
+Corporate Information
+---------------------
+Legal Name : Webvirtual Soluções Empresariais LTDA
+Public Brand : Webvirtual
+Tax ID : 27.460.661/0001-56
+Address : Av Alameda dos Ipês, 8625 Sala 12-A - Vale Do Sereno, Belo Horizonte, Minas Gerais, 34012-970, Brasil
+Website : https://www.webvirtual.com.br
+Support Email : odoo@webvirtual.com.br
+General Email : contato@webvirtual.com.br
+Phone 1 : +55 31 97147-4489
+Phone 2 : +55 62 99913-2635
+
+Copyright Notice
+----------------
+This repository and its associated module resources are maintained by
+Webvirtual Soluções Empresariais LTDA. Rights and permissions for use, modification,
+redistribution, sublicensing, and derivative works are governed by the license
+declared in the module manifest and reproduced in the root LICENSE file.
+
+If third-party software, libraries, images, fonts, or other external resources
+are included in this repository, their respective copyright and license terms
+must also be respected.
+
+Module Inventory
+----------------
+- wvse_odoo_health_monitor: Webvirtual Health Monitor | Version=15.0.1.1.0 | Category=Tools | License=OPL-1 | Application=Yes | Installable=Yes | Auto Install=No | Price=USD 1.49
+
+Contact
+-------
+For commercial, legal, technical, licensing, or support matters, contact:
+
+- odoo@webvirtual.com.br
+- contato@webvirtual.com.br
+- +55 31 97147-4489
+- +55 62 99913-2635
+
+Generated automatically in 2026-04-19 15:53:53.

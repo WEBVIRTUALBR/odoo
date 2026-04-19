@@ -1,0 +1,48 @@
+================================================================
+NOTICE
+================================================================
+
+This module repository includes legal and ownership metadata for distribution,
+commercial delivery, maintenance, and technical support.
+
+Publisher
+---------
+Webvirtual Soluções Empresariais LTDA
+Tax ID : 27.460.661/0001-56
+Address : Av Alameda dos Ipês, 8625 Sala 12-A - Vale Do Sereno, Belo Horizonte, Minas Gerais, 34012-970, Brasil
+Website : https://www.webvirtual.com.br
+
+Support and Contact
+-------------------
+Support Email : odoo@webvirtual.com.br
+General Email : contato@webvirtual.com.br
+Phone 1 : +55 31 97147-4489
+Phone 2 : +55 62 99913-2635
+
+Distribution Notice
+-------------------
+This module may be distributed, installed, maintained, updated, modified, or
+used only under the conditions defined by the applicable license in the root
+LICENSE file.
+
+For proprietary distributions under OPL-1, redistribution and reuse rights are
+limited by the Odoo Proprietary License terms.
+
+For open source distributions under LGPL-3, distribution and modification rights
+are governed by the GNU Lesser General Public License version 3 and related terms.
+
+Commercial and Technical Notice
+-------------------------------
+This NOTICE file is intended to provide repository-level identity, publisher
+contact channels, and high-level legal orientation for customers, implementers,
+partners, and auditors.
+
+For contract, warranty, implementation, support scope, service-level, or custom
+development matters, contact Webvirtual Soluções Empresariais LTDA through the official channels
+listed above.
+
+Module Inventory
+----------------
+- wvse_odoo_health_monitor: Webvirtual Health Monitor | Version=15.0.1.1.0 | Category=Tools | License=OPL-1 | Application=Yes | Installable=Yes | Auto Install=No | Price=USD 1.49
+
+Generated automatically in 2026-04-19 15:54:00.
