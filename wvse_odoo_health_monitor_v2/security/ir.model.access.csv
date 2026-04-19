@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wvse_health_run_user,wvse.health.run user,model_wvse_health_run,wvse_odoo_health_monitor.group_wvse_health_user,1,0,0,0
+access_wvse_health_issue_user,wvse.health.issue user,model_wvse_health_issue,wvse_odoo_health_monitor.group_wvse_health_user,1,0,0,0
+access_wvse_health_run_manager,wvse.health.run manager,model_wvse_health_run,wvse_odoo_health_monitor.group_wvse_health_manager,1,1,1,1
+access_wvse_health_issue_manager,wvse.health.issue manager,model_wvse_health_issue,wvse_odoo_health_monitor.group_wvse_health_manager,1,1,1,1
+access_wvse_health_schedule_wizard_manager,wvse.health.schedule.wizard manager,model_wvse_health_schedule_wizard,wvse_odoo_health_monitor.group_wvse_health_manager,1,1,1,0

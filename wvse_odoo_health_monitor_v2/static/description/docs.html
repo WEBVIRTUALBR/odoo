@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Neon Logic CRM Pro — Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#FAF5F9; --surface:#fff; --surface2:#F3EBF1;
+  --border:rgba(113,75,103,0.14); --text:#1A1018; --textMid:#4A3848;
+  --textSoft:#7C7578; --primary:#714B67; --cyan:#00C4D8; --cyanB:#00E5FF;
+  --code:#F0E8EE; --codeText:#4A3848;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);display:flex;height:100vh;overflow:hidden;}
+::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-thumb{background:rgba(113,75,103,0.25);border-radius:4px;}
+
+/* sidebar */
+.doc-sidebar{width:240px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:20px 0;}
+.doc-sidebar-header{padding:0 20px 16px;border-bottom:1px solid var(--border);margin-bottom:12px;}
+.doc-sidebar-header h2{font-family:'Space Grotesk';font-size:13px;font-weight:700;color:var(--primary);letter-spacing:.5px;text-transform:uppercase;}
+.doc-sidebar-header p{font-family:'Inter';font-size:11px;color:var(--textSoft);margin-top:2px;}
+.doc-nav-section{padding:0 12px;margin-bottom:4px;}
+.doc-nav-label{font-family:'Inter';font-size:10px;font-weight:600;color:var(--textSoft);text-transform:uppercase;letter-spacing:.8px;padding:8px 8px 4px;}
+.doc-nav-item{display:block;font-family:'Inter';font-size:12px;color:var(--textMid);padding:6px 10px;border-radius:6px;text-decoration:none;transition:all .15s;border-left:2px solid transparent;}
+.doc-nav-item:hover{background:rgba(113,75,103,0.07);color:var(--primary);}
+.doc-nav-item.active{background:rgba(113,75,103,0.1);color:var(--primary);border-left-color:var(--primary);font-weight:500;}
+.doc-nav-sub{padding-left:12px;}
+.doc-nav-sub .doc-nav-item{font-size:11px;padding:4px 8px;}
+
+/* main */
+.doc-main{flex:1;overflow-y:auto;padding:40px 48px;}
+.doc-section{max-width:760px;margin-bottom:56px;}
+.doc-section h1{font-family:'Space Grotesk';font-size:28px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.doc-section h2{font-family:'Space Grotesk';font-size:20px;font-weight:700;color:var(--text);margin:28px 0 12px;padding-top:12px;border-top:1px solid var(--border);}
+.doc-section h3{font-family:'Space Grotesk';font-size:15px;font-weight:600;color:var(--primary);margin:20px 0 8px;}
+.doc-section p{font-family:'Inter';font-size:13.5px;line-height:1.75;color:var(--textMid);margin-bottom:12px;}
+.doc-badge{display:inline-block;font-family:'Inter';font-size:10px;font-weight:600;padding:2px 8px;border-radius:12px;margin-bottom:12px;}
+.badge-version{background:rgba(113,75,103,0.12);color:#714B67;border:1px solid rgba(113,75,103,0.25);}
+.badge-odoo{background:#714B6720;color:#714B67;border:1px solid #714B6740;}
+.doc-section ul,ol{padding-left:20px;margin-bottom:12px;display:flex;flex-direction:column;gap:6px;}
+.doc-section li{font-family:'Inter';font-size:13.5px;color:var(--textMid);line-height:1.65;}
+.doc-section strong{color:var(--text);}
+pre{background:var(--code);border:1px solid var(--border);border-radius:8px;padding:16px 18px;overflow-x:auto;margin:12px 0;}
+code{font-family:'JetBrains Mono';font-size:12px;color:var(--codeText);}
+p code,li code{background:var(--code);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11.5px;}
+.callout{background:rgba(0,196,216,0.07);border:1px solid rgba(0,196,216,0.25);border-left:3px solid var(--cyan);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;}
+.callout-warn{background:rgba(255,152,0,0.06);border-color:rgba(255,152,0,0.3);border-left-color:#FF9800;}
+.callout p{margin:0;font-size:13px;}
+.callout-title{font-family:'Space Grotesk';font-weight:600;font-size:12px;margin-bottom:4px;color:var(--cyan);}
+.callout-warn .callout-title{color:#FF9800;}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px;}
+th{font-family:'Space Grotesk';font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--textSoft);padding:8px 12px;text-align:left;border-bottom:2px solid var(--border);background:var(--surface2);}
+td{font-family:'Inter';padding:8px 12px;border-bottom:1px solid var(--border);color:var(--textMid);}
+tr:last-child td{border-bottom:none;}
+.anchor{display:block;padding-top:80px;margin-top:-80px;}
+</style>
+</head>
+<body>
+
+<div class="doc-sidebar">
+  <div class="doc-sidebar-header">
+    <h2>Documentation</h2>
+    <p>Neon Logic CRM Pro · v2.1.0</p>
+  </div>
+  <div class="doc-nav-section">
+    <div class="doc-nav-label">Getting Started</div>
+    <a href="#intro" class="doc-nav-item active">Introduction</a>
+    <a href="#requirements" class="doc-nav-item">Requirements</a>
+    <a href="#installation" class="doc-nav-item">Installation</a>
+  </div>
+  <div class="doc-nav-section">
+    <div class="doc-nav-label">Configuration</div>
+    <a href="#general-settings" class="doc-nav-item">General Settings</a>
+    <a href="#access-rights" class="doc-nav-item">Access Rights</a>
+    <a href="#email-integration" class="doc-nav-item">Email Integration</a>
+    <a href="#automation" class="doc-nav-item">Automation Rules</a>
+  </div>
+  <div class="doc-nav-section">
+    <div class="doc-nav-label">Developer Guide</div>
+    <a href="#architecture" class="doc-nav-item">Architecture</a>
+    <a href="#api" class="doc-nav-item">REST API</a>
+    <div class="doc-nav-sub">
+      <a href="#api-auth" class="doc-nav-item">Authentication</a>
+      <a href="#api-leads" class="doc-nav-item">Leads Endpoint</a>
+      <a href="#api-pipeline" class="doc-nav-item">Pipeline Endpoint</a>
+    </div>
+    <a href="#hooks" class="doc-nav-item">Extension Hooks</a>
+    <a href="#inheritance" class="doc-nav-item">Inheritance</a>
+  </div>
+  <div class="doc-nav-section">
+    <div class="doc-nav-label">Reference</div>
+    <a href="#models" class="doc-nav-item">Model Reference</a>
+    <a href="#fields" class="doc-nav-item">Field Reference</a>
+    <a href="#faq" class="doc-nav-item">FAQ</a>
+    <a href="#troubleshooting" class="doc-nav-item">Troubleshooting</a>
+  </div>
+</div>
+
+<div class="doc-main">
+
+  <!-- INTRO -->
+  <div class="doc-section">
+    <div class="anchor" id="intro"></div>
+    <span class="doc-badge badge-version">v2.1.0</span>
+    <span class="doc-badge badge-odoo" style="margin-left:6px">Odoo 17.0</span>
+    <h1>Neon Logic CRM Pro</h1>
+    <p>Welcome to the official documentation for <strong>Neon Logic CRM Pro</strong>, a next-generation customer relationship management module built natively for Odoo 17. This guide covers installation, configuration, API usage, and advanced extension patterns.</p>
+    <div class="callout">
+      <div class="callout-title">📋 Quick Links</div>
+      <p>New users: start with <strong>Requirements</strong> → <strong>Installation</strong> → <strong>General Settings</strong>. Developers: jump to <strong>Architecture</strong> and <strong>REST API</strong>.</p>
+    </div>
+
+    <h2>What's Included</h2>
+    <ul>
+      <li>Advanced CRM pipeline with drag-and-drop Kanban boards</li>
+      <li>AI-assisted lead scoring and automatic priority assignment</li>
+      <li>Real-time dashboard with WebSocket-powered live metrics</li>
+      <li>Full REST API with JWT authentication</li>
+      <li>Multi-company and multi-language support (27 locales)</li>
+      <li>Role-based access control with field-level permissions</li>
+      <li>Native email integration with thread management</li>
+      <li>Automated pipeline actions and SLA tracking</li>
+    </ul>
+
+    <!-- REQUIREMENTS -->
+    <div class="anchor" id="requirements"></div>
+    <h2>Requirements</h2>
+    <table>
+      <tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr>
+      <tr><td>Odoo</td><td>17.0 (Community or Enterprise)</td><td>17.0 Enterprise</td></tr>
+      <tr><td>Python</td><td>3.10+</td><td>3.11+</td></tr>
+      <tr><td>PostgreSQL</td><td>13+</td><td>15+</td></tr>
+      <tr><td>RAM</td><td>2 GB</td><td>4 GB+</td></tr>
+    </table>
+    <p>Python dependencies (<code>requirements.txt</code> included):</p>
+    <pre><code>requests>=2.31.0
+pandas>=2.0.0
+python-dateutil>=2.8.2</code></pre>
+  </div>
+
+  <!-- INSTALLATION -->
+  <div class="doc-section">
+    <div class="anchor" id="installation"></div>
+    <h1>Installation</h1>
+    <p>Follow these steps to install <strong>Neon Logic CRM Pro</strong> on your Odoo instance.</p>
+
+    <h3>1. Download the Module</h3>
+    <p>Purchase and download the module from the <strong>Odoo App Store</strong>. Extract the archive — it contains a single folder named <code>neon_logic_crm</code>.</p>
+
+    <h3>2. Add to Addons Path</h3>
+    <p>Copy the module folder to your Odoo addons directory:</p>
+    <pre><code># Copy module to addons path
+cp -r neon_logic_crm /opt/odoo/custom-addons/
+
+# Verify folder structure
+ls /opt/odoo/custom-addons/neon_logic_crm/
+# Expected: __manifest__.py  __init__.py  models/  views/  static/</code></pre>
+
+    <h3>3. Update Addons List</h3>
+    <p>Restart Odoo and update the module list:</p>
+    <pre><code># Restart Odoo service
+sudo systemctl restart odoo
+
+# Or update via CLI
+./odoo-bin -d your_database -u neon_logic_crm --stop-after-init</code></pre>
+
+    <h3>4. Install via UI</h3>
+    <p>Navigate to <strong>Settings → Apps</strong>, search for <em>Neon Logic CRM Pro</em>, and click <strong>Install</strong>.</p>
+
+    <div class="callout callout-warn">
+      <div class="callout-title">⚠️ Dependency Order</div>
+      <p>Ensure <code>crm</code> and <code>mail</code> base modules are installed before activating this module. The installer will handle this automatically.</p>
+    </div>
+  </div>
+
+  <!-- GENERAL SETTINGS -->
+  <div class="doc-section">
+    <div class="anchor" id="general-settings"></div>
+    <h1>Configuration</h1>
+    <h2>General Settings</h2>
+    <p>After installation, navigate to <strong>CRM → Configuration → Neon Logic Settings</strong> to configure the module.</p>
+
+    <h3>Pipeline Settings</h3>
+    <table>
+      <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+      <tr><td><code>pipeline_auto_assign</code></td><td><code>True</code></td><td>Auto-assign leads to available salesperson based on workload</td></tr>
+      <tr><td><code>lead_scoring_enabled</code></td><td><code>False</code></td><td>Enable AI-powered lead scoring (requires API key)</td></tr>
+      <tr><td><code>sla_tracking</code></td><td><code>True</code></td><td>Track SLA compliance across pipeline stages</td></tr>
+      <tr><td><code>realtime_dashboard</code></td><td><code>True</code></td><td>Enable WebSocket live updates on dashboards</td></tr>
+    </table>
+
+    <div class="anchor" id="access-rights"></div>
+    <h2>Access Rights</h2>
+    <p>The module ships with three predefined roles:</p>
+    <ul>
+      <li><strong>CRM User</strong> — Can view and edit own leads. No configuration access.</li>
+      <li><strong>CRM Manager</strong> — Full pipeline access across all salespersons. Configuration read-only.</li>
+      <li><strong>CRM Administrator</strong> — Full access including settings, automations, and API keys.</li>
+    </ul>
+
+    <div class="anchor" id="email-integration"></div>
+    <h2>Email Integration</h2>
+    <p>Configure your outgoing mail server under <strong>Settings → Technical → Outgoing Mail</strong>. The CRM module uses the alias system to automatically convert incoming emails to leads:</p>
+    <pre><code># Example: catch-all alias for lead creation
+Alias: leads@yourcompany.com → CRM / New Lead
+Model: crm.lead
+Default values: {"type": "lead", "tag_ids": [3]}</code></pre>
+  </div>
+
+  <!-- API -->
+  <div class="doc-section">
+    <div class="anchor" id="architecture"></div>
+    <h1>Developer Guide</h1>
+    <h2>Architecture Overview</h2>
+    <p>The module follows standard Odoo MVC patterns with additional service layers:</p>
+    <pre><code>neon_logic_crm/
+├── models/
+│   ├── crm_lead.py          # Extended lead model
+│   ├── crm_pipeline.py      # Pipeline stage logic
+│   ├── nl_score_engine.py   # Lead scoring service
+│   └── res_config_settings.py
+├── controllers/
+│   ├── main.py              # Web routes
+│   └── api_v1.py            # REST API v1
+├── views/
+│   ├── crm_lead_views.xml
+│   └── dashboard_templates.xml
+└── static/src/
+    ├── js/                  # OWL components
+    └── scss/                # Styles</code></pre>
+
+    <div class="anchor" id="api"></div>
+    <h2>REST API</h2>
+    <p>The module exposes a versioned REST API at <code>/api/nl/v1/</code>. All endpoints require authentication.</p>
+
+    <div class="anchor" id="api-auth"></div>
+    <h3>Authentication</h3>
+    <p>Use Bearer token authentication. Obtain a token via the standard Odoo session or generate an API key in <strong>Settings → API Keys</strong>:</p>
+    <pre><code>curl -X POST https://your-odoo.com/api/nl/v1/auth \
+  -H "Content-Type: application/json" \
+  -d '{"login": "admin", "password": "your-password", "db": "your_db"}'
+
+# Response
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "expires_in": 86400
+}</code></pre>
+
+    <div class="anchor" id="api-leads"></div>
+    <h3>Leads Endpoint</h3>
+    <pre><code># List leads
+GET /api/nl/v1/leads?stage=new&limit=20
+Authorization: Bearer {token}
+
+# Create lead
+POST /api/nl/v1/leads
+{
+  "name": "Acme Corp — Enterprise Deal",
+  "partner_name": "John Doe",
+  "email_from": "john@acme.com",
+  "expected_revenue": 15000,
+  "probability": 60
+}</code></pre>
+
+    <div class="anchor" id="hooks"></div>
+    <h2>Extension Hooks</h2>
+    <p>Override the scoring engine by inheriting <code>nl.score.engine</code>:</p>
+    <pre><code>class MyCustomScorer(models.AbstractModel):
+    _inherit = 'nl.score.engine'
+
+    def _compute_score(self, lead):
+        score = super()._compute_score(lead)
+        # Add your custom scoring logic
+        if lead.partner_id.country_id.code == 'PT':
+            score += 10
+        return score</code></pre>
+  </div>
+
+  <!-- MODELS -->
+  <div class="doc-section">
+    <div class="anchor" id="models"></div>
+    <h1>Model Reference</h1>
+    <h2>crm.lead (extended)</h2>
+    <p>The module extends the base <code>crm.lead</code> model with additional fields:</p>
+    <table>
+      <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+      <tr><td><code>nl_score</code></td><td>Float</td><td>AI-computed lead quality score (0–100)</td></tr>
+      <tr><td><code>nl_sla_deadline</code></td><td>Datetime</td><td>SLA response deadline</td></tr>
+      <tr><td><code>nl_sla_status</code></td><td>Selection</td><td>on_track / at_risk / breached</td></tr>
+      <tr><td><code>nl_last_activity</code></td><td>Datetime</td><td>Last customer interaction timestamp</td></tr>
+      <tr><td><code>nl_pipeline_duration</code></td><td>Integer</td><td>Days in current stage</td></tr>
+      <tr><td><code>nl_source_channel</code></td><td>Char</td><td>Attribution source (utm, email, manual)</td></tr>
+    </table>
+
+    <div class="anchor" id="faq"></div>
+    <h2>FAQ</h2>
+    <h3>Does this work with Odoo Community?</h3>
+    <p>Yes. All core features are compatible with Odoo 17 Community. Some features like the enterprise dashboard layout require the Enterprise edition.</p>
+
+    <h3>Can I use this with multiple companies?</h3>
+    <p>Yes. Full multi-company isolation is supported. Each company has its own pipeline stages, SLA rules, and team assignments.</p>
+
+    <h3>How do I update to a new version?</h3>
+    <p>Download the new version from the App Store, replace the module folder, and run:</p>
+    <pre><code>./odoo-bin -d your_database -u neon_logic_crm --stop-after-init</code></pre>
+
+    <div class="anchor" id="troubleshooting"></div>
+    <h2>Troubleshooting</h2>
+    <h3>Module not appearing in App list</h3>
+    <p>Ensure the folder name matches exactly <code>neon_logic_crm</code> and that the addons path in <code>odoo.conf</code> includes the parent directory.</p>
+    <h3>WebSocket dashboard not updating</h3>
+    <p>Verify that your reverse proxy (nginx/apache) allows WebSocket upgrade headers. See <a href="#" style="color:var(--cyan)">proxy configuration guide</a>.</p>
+  </div>
+
+</div>
+
+<script>
+// Highlight active nav item on scroll
+const sections = document.querySelectorAll('.anchor');
+const navItems = document.querySelectorAll('.doc-nav-item');
+const mainEl = document.querySelector('.doc-main');
+
+mainEl.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (mainEl.scrollTop >= s.offsetTop - 100) current = s.id;
+  });
+  navItems.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+navItems.forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (target) mainEl.scrollTo({top: target.offsetTop - 20, behavior: 'smooth'});
+  });
+});
+</script>
+</body>
+</html>
