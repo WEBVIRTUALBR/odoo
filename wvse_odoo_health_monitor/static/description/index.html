@@ -1,179 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-<!-- Latest Bootstrap 4.4.1 CSS CDN -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Categorizada</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>FancyBox 3 Multiple Galleries and Albums</title>
-	<style>
+    <style>
+        /* CSS do Lightbox e Animação */
+        .lightbox {
+            display: none;
+            backdrop-filter: blur(5px);
+        }
+        .lightbox:target {
+            display: flex !important;
+        }
+        .hover-zoom {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-zoom:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+        }
+        
+        /* Deixa o cursor com formato de "mãozinha" ao passar sobre os títulos das categorias */
+        summary {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        summary:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="bg-light">
 
-   figcaption{
-      font-size: 14px;
-      padding-top:5px;
-      color:black;
-      text-transform: uppercase;
-      }
-@media all and (min-width: 800px) {
-  .fancybox-thumbs {
-    top: auto;
-    width: auto;
-    bottom: 0;
-    left: 0;
-    right : 0;
-    height: 95px;
-    padding: 10px 10px 5px 10px;
-    box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.3);
-  }
-  
-  .fancybox-show-thumbs .fancybox-inner {
-    right: 0;
-    bottom: 95px;
-  }
-}
-	</style>
-  </head>
-  <body>
+    <div class="container py-5">
+        <h2 class="text-center mb-5">Galeria por Categorias</h2>
+        
+        <details class="mb-4 bg-white p-4 rounded shadow-sm border" open>
+            <summary class="h4 text-primary mb-0 fw-bold">Categoria 1: Paisagens (3 Imagens)</summary>
+            
+            <div class="row g-4 mt-2 justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <a href="#img1"><img src="https://picsum.photos/id/1015/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Paisagem 1"></a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <a href="#img2"><img src="https://picsum.photos/id/1016/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Paisagem 2"></a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <a href="#img3"><img src="https://picsum.photos/id/1018/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Paisagem 3"></a>
+                </div>
+            </div>
+        </details>
 
-<section class="container text-center">
-      <h1 class=" mt-5">FancyBox 3</h1>
-  <h3 class="text-danger">Multiple Albums </h3>
-  <div class=" row d-flex justify-content-center mt-5">
+        <details class="mb-4 bg-white p-4 rounded shadow-sm border">
+            <summary class="h4 text-primary mb-0 fw-bold">Categoria 2: Arquitetura (2 Imagens)</summary>
+            
+            <div class="row g-4 mt-2 justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <a href="#img4"><img src="https://picsum.photos/id/1019/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Arquitetura 1"></a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <a href="#img5"><img src="https://picsum.photos/id/1021/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Arquitetura 2"></a>
+                </div>
+            </div>
+        </details>
 
-    <div class="col-sm-4 mb-2">
-      <a data-fancybox-trigger="preview1" href="javascript:;">
-        <img src="https://picsum.photos/302/200" class="img-thumbnail" />
-		<figcaption>Album One</figcaption>
-      </a>
-     <div style="display: none;">
-      <a href="https://picsum.photos/1500/1000" data-fancybox="preview1"  data-fancybox data-caption="This image has a caption" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/LuK-MuZ-yf0/120x80" />
-      </a>
-
-      <a href="https://picsum.photos/1501/1000" data-fancybox="preview1"  data-fancybox data-caption="This image has a caption" data-width="1501" data-height="1000">
-        <img src="https://source.unsplash.com/Oaqk7qqNh_c/120x80" />
-      </a>
-
-      <a href="https://picsum.photos/1500/1001" data-fancybox="preview1"  data-fancybox data-caption="This image has a caption" data-width="1500" data-height="1001">
-        <img src="https://source.unsplash.com/X9GHkHbJIaU/120x80" />
-      </a>
-
-      <a href="https://picsum.photos/1503/1000" data-fancybox="preview1"  data-fancybox data-caption="This image has a caption" data-width="1503" data-height="1000">
-        <img src="https://source.unsplash.com/9c_djeQTDyY/120x80" />
-      </a>
-      
+        <details class="mb-4 bg-white p-4 rounded shadow-sm border">
+            <summary class="h4 text-primary mb-0 fw-bold">Categoria 3: Animais (3 Imagens)</summary>
+            
+            <div class="row g-4 mt-2 justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <a href="#img6"><img src="https://picsum.photos/id/1024/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Animal 1"></a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <a href="#img7"><img src="https://picsum.photos/id/1025/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Animal 2"></a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <a href="#img8"><img src="https://picsum.photos/id/237/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Animal 3"></a>
+                </div>
+            </div>
+        </details>
     </div>
-   </div>
-  
-    <div class="col-sm-4">
-      <a data-fancybox-trigger="preview2" href="javascript:;">
-        <img src="https://picsum.photos/300/201" class="img-thumbnail" />
-        <figcaption>Album Two</figcaption>
-      </a>
-   
-    <div style="display: none;">
-      <a href="https://source.unsplash.com/LuK-MuZ-yf0/1500x1000" data-fancybox="preview2" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/LuK-MuZ-yf0/120x80" />
-      </a>
 
-      <a href="https://source.unsplash.com/Oaqk7qqNh_c/1500x1000" data-fancybox="preview2" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/Oaqk7qqNh_c/120x80" />
-      </a>
-
-      <a href="https://source.unsplash.com/X9GHkHbJIaU/1500x1000" data-fancybox="preview2" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/X9GHkHbJIaU/120x80" />
-      </a>
-
-      <a href="https://source.unsplash.com/9c_djeQTDyY/1500x1000" data-fancybox="preview2" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/9c_djeQTDyY/120x80" />
-      </a>
-     
+    <div id="img1" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
+        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
+        <img src="https://picsum.photos/id/1015/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Foto 1">
     </div>
- </div>
 
-    <div class="col-sm-4">
-      <a data-fancybox-trigger="preview3" href="javascript:;">
-        <img src="https://picsum.photos/306/201" class="img-thumbnail" />
-        <figcaption>Album Three</figcaption>
-      </a>
-   
-    <div style="display: none;">
-      <a href="https://source.unsplash.com/LuK-MuZ-yf0/1500x1000" data-fancybox="preview3" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/LuK-MuZ-yf0/120x80" />
-      </a>
-
-      <a href="https://source.unsplash.com/Oaqk7qqNh_c/1500x1000" data-fancybox="preview3" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/Oaqk7qqNh_c/120x80" />
-      </a>
-
-      <a href="https://source.unsplash.com/X9GHkHbJIaU/1500x1000" data-fancybox="preview3" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/X9GHkHbJIaU/120x80" />
-      </a>
-
-      <a href="https://source.unsplash.com/9c_djeQTDyY/1500x1000" data-fancybox="preview3" data-width="1500" data-height="1000">
-        <img src="https://source.unsplash.com/9c_djeQTDyY/120x80" />
-      </a>
-     
+    <div id="img2" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
+        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
+        <img src="https://picsum.photos/id/1016/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Foto 2">
     </div>
- </div>
 
-</div> <!--end of row  -->
-</section>
+    <div id="img3" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
+        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
+        <img src="https://picsum.photos/id/1018/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Foto 3">
+    </div>
 
+    <div id="img4" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
+        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
+        <img src="https://picsum.photos/id/1019/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Foto 4">
+    </div>
 
+    <div id="img5" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
+        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
+        <img src="https://picsum.photos/id/1021/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Foto 5">
+    </div>
 
+    <div id="img6" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
+        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
+        <img src="https://picsum.photos/id/1024/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Foto 6">
+    </div>
 
-   
-<!-- Bootstrap 4.4.1 JavaScript
-================================================== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.8.2/cloudinary-core-shrinkwrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
-  
-  <script>
-$('[data-fancybox="preview1"]').fancybox({
-  thumbs : {
-    autoStart : true
-  }
-});
+    <div id="img7" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
+        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
+        <img src="https://picsum.photos/id/1025/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Foto 7">
+    </div>
 
-$('[data-fancybox="preview2"]').fancybox({
-  thumbs : {
-    autoStart : true
-  }
-});
+    <div id="img8" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
+        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
+        <img src="https://picsum.photos/id/237/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Foto 8">
+    </div>
 
-$('[data-fancybox="preview3"]').fancybox({
-  thumbs : {
-    autoStart : true
-  }
-});
-  // Options for the first group
-$('[data-fancybox="images"]').fancybox({
-  thumbs : {
-    autoStart : true
-  },
-  touch : {
-	vertical : true,  // Allow to drag content vertically
-	momentum : true   // Continuous movement when panning
-},
-  buttons : [
-    'zoom',
-    'close'
-  ]
-});
-
-  </script>
-  
-  
 </body>
 </html>
