@@ -1,47 +1,84 @@
 <section class="container pb-5">
-    <h2 class="text-center mb-4" style="font-weight: 600;">Gallery Albums</h2>
+    <h2 class="text-center mb-4" style="font-weight: 600;">Álbuns da Galeria</h2>
     
     <details class="mb-4 p-4 border rounded bg-white shadow-sm" open="open">
         <summary class="h4 text-primary mb-0" style="cursor: pointer; font-weight: bold; list-style: none;">
-            <i class="fa fa-folder-open-o mr-2" style="color: #e2b43b;"></i> Category 1: Nature (3 Photos)
+            <i class="fa fa-folder-open-o mr-2" style="color: #e2b43b;"></i> Categoria 1: Natureza (3 Fotos)
         </summary>
         
         <div class="row mt-4">
             <div class="col-12 col-md-4 mb-3">
-                <a href="https://picsum.photos/id/1015/1200/900" target="_blank" title="Click to view full size">
-                    <img src="https://picsum.photos/id/1015/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Nature 1"/>
-                </a>
+                <img src="https://picsum.photos/id/1015/400/300" 
+                     class="img-fluid rounded shadow-sm w-100" 
+                     style="object-fit: cover; max-height: 200px; cursor: zoom-in;" 
+                     data-toggle="modal" 
+                     data-target="#modalImg1" 
+                     alt="Nature 1"/>
             </div>
+
             <div class="col-12 col-md-4 mb-3">
-                <a href="https://picsum.photos/id/1016/1200/900" target="_blank" title="Click to view full size">
-                    <img src="https://picsum.photos/id/1016/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Nature 2"/>
-                </a>
+                <img src="https://picsum.photos/id/1016/400/300" 
+                     class="img-fluid rounded shadow-sm w-100" 
+                     style="object-fit: cover; max-height: 200px; cursor: zoom-in;" 
+                     data-toggle="modal" 
+                     data-target="#modalImg2" 
+                     alt="Nature 2"/>
             </div>
+
             <div class="col-12 col-md-4 mb-3">
-                <a href="https://picsum.photos/id/1018/1200/900" target="_blank" title="Click to view full size">
-                    <img src="https://picsum.photos/id/1018/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Nature 3"/>
-                </a>
+                <img src="https://picsum.photos/id/1018/400/300" 
+                     class="img-fluid rounded shadow-sm w-100" 
+                     style="object-fit: cover; max-height: 200px; cursor: zoom-in;" 
+                     data-toggle="modal" 
+                     data-target="#modalImg3" 
+                     alt="Nature 3"/>
             </div>
         </div>
     </details>
 
-    <details class="mb-4 p-4 border rounded bg-white shadow-sm">
-        <summary class="h4 text-success mb-0" style="cursor: pointer; font-weight: bold; list-style: none;">
-            <i class="fa fa-folder-open-o mr-2" style="color: #e2b43b;"></i> Category 2: Architecture (2 Photos)
-        </summary>
-        
-        <div class="row mt-4">
-            <div class="col-12 col-md-4 mb-3">
-                <a href="https://picsum.photos/id/1019/1200/900" target="_blank" title="Click to view full size">
-                    <img src="https://picsum.photos/id/1019/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Architecture 1"/>
-                </a>
-            </div>
-            <div class="col-12 col-md-4 mb-3">
-                <a href="https://picsum.photos/id/1021/1200/900" target="_blank" title="Click to view full size">
-                    <img src="https://picsum.photos/id/1021/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Architecture 2"/>
-                </a>
+    <div class="modal fade" id="modalImg1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 1; text-shadow: 0 1px 0 #000; font-size: 2.5rem;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <img src="https://picsum.photos/id/1015/1200/900" class="img-fluid rounded shadow-lg" alt="Full Nature 1">
+                </div>
             </div>
         </div>
-    </details>
+    </div>
+
+    <div class="modal fade" id="modalImg2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 1; text-shadow: 0 1px 0 #000; font-size: 2.5rem;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <img src="https://picsum.photos/id/1016/1200/900" class="img-fluid rounded shadow-lg" alt="Full Nature 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalImg3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 1; text-shadow: 0 1px 0 #000; font-size: 2.5rem;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <img src="https://picsum.photos/id/1018/1200/900" class="img-fluid rounded shadow-lg" alt="Full Nature 3">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
