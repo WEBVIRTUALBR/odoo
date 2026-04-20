@@ -1,73 +1,81 @@
-<section id="wvse_dependencies" class="container py-5" style="font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;">
-    
-    <div class="d-flex align-items-center mb-4">
-        <div style="width: 4px; height: 18px; background-color: #8E7A96; margin-right: 10px; border-radius: 2px;"></div>
-        <h5 style="color: #6C5B7B; font-weight: 600; margin: 0; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.95rem;">Dependencies</h5>
-    </div>
+<section id="wvse_dependencies_organogram" class="container py-5" style="font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;">
+<div class="text-center mb-5">
+<h2 id="wvse_main_title" style="font-weight: 700; color: #2C3E50; margin-bottom: 10px;">Module Dependencies Hierarchical Organogram</h2>
+<p style="color: #7F8C8D; font-size: 1.1rem;">Click on nodes to explore dependencies vertically. Each dependency is on its own line.</p>
+</div>
 
-    <div style="background-color: #F8F5F9; border-radius: 16px; padding: 40px 20px; border: 1px solid #EBE6ED;">
+<details id="wvse_organogram_details" class="mb-4 p-4 border rounded bg-white shadow-sm" open="open">
+    <summary id="wvse_organogram_sum" class="h4 text-primary mb-0" style="cursor: pointer; font-weight: bold; list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center;">
+            <i class="fa fa-sitemap mr-3" style="color: #00A09D; font-size: 1.5rem;"></i>
+            <span style="font-size: 1.25rem; font-weight: 600; color: #333;">Dependency Tree View</span>
+        </div>
+        <i class="fa fa-chevron-down text-muted"></i>
+    </summary>
 
-        <div class="d-flex justify-content-center mb-3">
-            <div style="background: #FFFFFF; border: 1px solid #DFD9E2; border-radius: 8px; padding: 12px 30px; font-weight: 600; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.02); font-family: monospace; font-size: 1.1rem;">
+    <div id="wvse_organogram_content" class="mt-4" style="background-color: #F8F5F9; border-radius: 12px; padding: 20px;">
+        
+        <div id="wvse_node_root" class="text-center mb-3">
+            <div style="background: #FFFFFF; border: 1px solid #DFD9E2; border-radius: 8px; padding: 12px 30px; font-weight: 600; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.02); font-family: monospace; font-size: 1.1rem; display: inline-block;">
                 wvse_odoo_health_monitor
             </div>
         </div>
 
-        <div class="text-center mb-4">
-            <span style="color: #A393A8; font-size: 1.5rem; line-height: 1;">&darr;</span>
-        </div>
-
-        <div class="row px-lg-4">
-            
-            <div class="col-md-4 mb-4">
-                <div class="h-100 bg-white" style="border-radius: 12px; padding: 24px; border: 1px solid #F0F0F0; box-shadow: 0 4px 6px rgba(0,0,0,0.03);">
-                    <h5 style="color: #796685; font-weight: 600; margin-bottom: 8px; font-size: 1.1rem;">Odoo Core</h5>
-                    <p style="color: #8C8C8C; font-size: 0.85rem; margin-bottom: 20px;">Primary framework dependencies</p>
-                    
-                    <div class="d-flex flex-wrap">
-                        <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">base</span>
-                        <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">mail</span>
-                        <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">crm</span>
-                        <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">account</span>
-                        <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">project</span>
-                        <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">sale_management</span>
-                    </div>
+        <details id="wvse_node_main_details" open style="list-style: none; outline: none;">
+            <summary style="cursor: s-resize; list-style: none; outline: none; text-align: center;">
+                <div class="text-center mb-4">
+                    <span style="color: #A393A8; font-size: 1.5rem; line-height: 1;">&darr;</span>
+                    <div style="border-left: 2px solid #A393A8; height: 30px; width: 1px; margin: 0 auto;"></div>
                 </div>
-            </div>
+            </summary>
 
-            <div class="col-md-4 mb-4">
-                <div class="h-100 bg-white" style="border-radius: 12px; padding: 24px; border: 1px solid #DDF1F3; box-shadow: 0 4px 6px rgba(0,0,0,0.03);">
-                    <h5 style="color: #209EAB; font-weight: 600; margin-bottom: 8px; font-size: 1.1rem;">Internal Modules</h5>
-                    <p style="color: #8C8C8C; font-size: 0.85rem; margin-bottom: 20px;">Webvirtual dependency layer</p>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                
+                <div id="wvse_node_level1" class="mb-3" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
                     
-                    <div class="d-flex flex-wrap">
-                        <span style="background-color: #F2FAFB; color: #444; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #D2EBED;">wvse_base</span>
-                        <span style="background-color: #F2FAFB; color: #444; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #D2EBED;">wvse_core</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="h-100 bg-white" style="border-radius: 12px; padding: 24px; border: 1px solid #FCEBDE; box-shadow: 0 4px 6px rgba(0,0,0,0.03);">
-                    <h5 style="color: #E28031; font-weight: 600; margin-bottom: 8px; font-size: 1.1rem;">External (Python)</h5>
-                    <p style="color: #8C8C8C; font-size: 0.85rem; margin-bottom: 20px;">Service and analytics libraries</p>
-                    
-                    <div>
-                        <div style="background-color: #FEF9F5; color: #555; padding: 8px 16px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin-bottom: 12px; border: 1px solid #FAE3D2; display: inline-block;">
-                            requests &ge;2.28
-                        </div>
-                        <br>
-                        <div style="background-color: #FEF9F5; color: #555; padding: 8px 16px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin-bottom: 12px; border: 1px solid #FAE3D2; display: inline-block;">
-                            pandas &ge;2.0
-                        </div>
-                        <br>
-                        <div style="background-color: #FEF9F5; color: #555; padding: 8px 16px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin-bottom: 12px; border: 1px solid #FAE3D2; display: inline-block;">
-                            python-dateutil
+                    <div id="wvse_node_odoo_core" class="mb-2 p-3 bg-white" style="border-radius: 12px; border: 1px solid #DFD9E2; width: 80%; max-width: 600px; box-shadow: 0 4px 6px rgba(0,0,0,0.03);">
+                         <h5 style="color: #796685; font-weight: 600; margin-bottom: 8px; font-size: 1.1rem; display: flex; align-items: center;">
+                            <i class="fa fa-code-fork mr-2" style="color: #DFD9E2;"></i>Odoo Core
+                        </h5>
+                        <p style="color: #8C8C8C; font-size: 0.85rem; margin-bottom: 15px;">Primary framework dependencies</p>
+                        <div class="d-flex flex-wrap">
+                            <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">base</span>
+                            <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">mail</span>
+                            <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">crm</span>
+                            <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">account</span>
+                            <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">project</span>
+                            <span style="background-color: #F5F3F7; color: #555; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #EAE6EC;">sale_management</span>
                         </div>
                     </div>
+                    <div style="border-left: 2px solid #A393A8; height: 30px; width: 1px;"></div>
+
+                    <div id="wvse_node_internal_modules" class="mb-2 p-3 bg-white" style="border-radius: 12px; border: 1px solid #DDF1F3; width: 80%; max-width: 600px; box-shadow: 0 4px 6px rgba(0,0,0,0.03);">
+                        <h5 style="color: #209EAB; font-weight: 600; margin-bottom: 8px; font-size: 1.1rem; display: flex; align-items: center;">
+                            <i class="fa fa-cubes mr-2" style="color: #D2EBED;"></i>Internal Modules
+                        </h5>
+                        <p style="color: #8C8C8C; font-size: 0.85rem; margin-bottom: 15px;">Webvirtual dependency layer</p>
+                        <div class="d-flex flex-wrap">
+                            <span style="background-color: #F2FAFB; color: #444; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #D2EBED;">wvse_base</span>
+                            <span style="background-color: #F2FAFB; color: #444; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin: 0 8px 10px 0; border: 1px solid #D2EBED;">wvse_core</span>
+                        </div>
+                    </div>
+                    <div style="border-left: 2px solid #A393A8; height: 30px; width: 1px;"></div>
+
+                    <div id="wvse_node_external_python" class="mb-2 p-3 bg-white" style="border-radius: 12px; border: 1px solid #FCEBDE; width: 80%; max-width: 600px; box-shadow: 0 4px 6px rgba(0,0,0,0.03);">
+                        <h5 style="color: #E28031; font-weight: 600; margin-bottom: 8px; font-size: 1.1rem; display: flex; align-items: center;">
+                            <i class="fa fa-code mr-2" style="color: #FAE3D2;"></i>External (Python)
+                        </h5>
+                        <p style="color: #8C8C8C; font-size: 0.85rem; margin-bottom: 15px;">Service and analytics libraries</p>
+                        <div>
+                            <div style="background-color: #FEF9F5; color: #555; padding: 8px 16px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin-bottom: 12px; border: 1px solid #FAE3D2; display: inline-block;">requests >=2.28</div><br>
+                            <div style="background-color: #FEF9F5; color: #555; padding: 8px 16px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin-bottom: 12px; border: 1px solid #FAE3D2; display: inline-block;">pandas >=2.0</div><br>
+                            <div style="background-color: #FEF9F5; color: #555; padding: 8px 16px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin-bottom: 12px; border: 1px solid #FAE3D2; display: inline-block;">python-dateutil</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-        </div>
+        </details>
     </div>
+</details>
 </section>
