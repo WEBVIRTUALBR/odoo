@@ -1,158 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria Agrupada CSS Pura</title>
+<section class="container pb-5">
+    <h2 class="text-center mb-4" style="font-weight: 600;">Gallery Albums</h2>
     
-    <style>
-        /* CSS do Lightbox (mantido igual) */
-        .lightbox {
-            display: none; 
-            backdrop-filter: blur(5px);
-        }
-        .lightbox:target {
-            display: flex !important;
-        }
-
-        /* Animação suave para as miniaturas */
-        .hover-zoom {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-zoom:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
-        }
-
-        /* Estilo extra para a tag summary (o título da categoria clicável) */
-        summary {
-            cursor: pointer;
-            user-select: none;
-            transition: background-color 0.2s ease;
-        }
-        summary:hover {
-            background-color: #f8f9fa;
-        }
-    </style>
-</head>
-<body class="bg-light">
-
-    <div class="container py-5">
-        <h2 class="text-center mb-5">Álbuns da Galeria</h2>
-
-        <details class="bg-white rounded shadow-sm mb-4" open> <summary class="p-3 fs-5 fw-bold border-bottom text-primary">
-                📁 Categoria 1: Natureza (3 Fotos)
-            </summary>
-            
-            <div class="p-4">
-                <div class="row g-4">
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a href="#img1" class="d-block text-decoration-none">
-                            <img src="https://picsum.photos/id/1015/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Foto 1">
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a href="#img2" class="d-block text-decoration-none">
-                            <img src="https://picsum.photos/id/1016/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Foto 2">
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a href="#img3" class="d-block text-decoration-none">
-                            <img src="https://picsum.photos/id/1018/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Foto 3">
-                        </a>
-                    </div>
-                </div>
+    <details class="mb-4 p-4 border rounded bg-white shadow-sm" open="open">
+        <summary class="h4 text-primary mb-0" style="cursor: pointer; font-weight: bold; list-style: none;">
+            <i class="fa fa-folder-open-o mr-2" style="color: #e2b43b;"></i> Category 1: Nature (3 Photos)
+        </summary>
+        
+        <div class="row mt-4">
+            <div class="col-12 col-md-4 mb-3">
+                <a href="https://picsum.photos/id/1015/1200/900" target="_blank" title="Click to view full size">
+                    <img src="https://picsum.photos/id/1015/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Nature 1"/>
+                </a>
             </div>
-        </details>
-
-        <details class="bg-white rounded shadow-sm mb-4">
-            <summary class="p-3 fs-5 fw-bold border-bottom text-success">
-                📁 Categoria 2: Arquitetura (2 Fotos)
-            </summary>
-            
-            <div class="p-4">
-                <div class="row g-4 justify-content-start">
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a href="#img4" class="d-block text-decoration-none">
-                            <img src="https://picsum.photos/id/1019/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Foto 4">
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a href="#img5" class="d-block text-decoration-none">
-                            <img src="https://picsum.photos/id/1020/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Foto 5">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-12 col-md-4 mb-3">
+                <a href="https://picsum.photos/id/1016/1200/900" target="_blank" title="Click to view full size">
+                    <img src="https://picsum.photos/id/1016/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Nature 2"/>
+                </a>
             </div>
-        </details>
-
-        <details class="bg-white rounded shadow-sm mb-4">
-            <summary class="p-3 fs-5 fw-bold border-bottom text-danger">
-                📁 Categoria 3: Animais (3 Fotos)
-            </summary>
-            
-            <div class="p-4">
-                <div class="row g-4">
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a href="#img6" class="d-block text-decoration-none">
-                            <img src="https://picsum.photos/id/1024/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Foto 6">
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a href="#img7" class="d-block text-decoration-none">
-                            <img src="https://picsum.photos/id/1025/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Foto 7">
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a href="#img8" class="d-block text-decoration-none">
-                            <img src="https://picsum.photos/id/237/400/300" class="img-fluid rounded shadow-sm hover-zoom w-100" style="object-fit: cover; height: 200px;" alt="Foto 8">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-12 col-md-4 mb-3">
+                <a href="https://picsum.photos/id/1018/1200/900" target="_blank" title="Click to view full size">
+                    <img src="https://picsum.photos/id/1018/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Nature 3"/>
+                </a>
             </div>
-        </details>
+        </div>
+    </details>
 
-    </div>
+    <details class="mb-4 p-4 border rounded bg-white shadow-sm">
+        <summary class="h4 text-success mb-0" style="cursor: pointer; font-weight: bold; list-style: none;">
+            <i class="fa fa-folder-open-o mr-2" style="color: #e2b43b;"></i> Category 2: Architecture (2 Photos)
+        </summary>
+        
+        <div class="row mt-4">
+            <div class="col-12 col-md-4 mb-3">
+                <a href="https://picsum.photos/id/1019/1200/900" target="_blank" title="Click to view full size">
+                    <img src="https://picsum.photos/id/1019/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Architecture 1"/>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <a href="https://picsum.photos/id/1021/1200/900" target="_blank" title="Click to view full size">
+                    <img src="https://picsum.photos/id/1021/400/300" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover; max-height: 200px;" alt="Architecture 2"/>
+                </a>
+            </div>
+        </div>
+    </details>
 
-    <div id="img1" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
-        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
-        <img src="https://picsum.photos/id/1015/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Full 1">
-    </div>
-    
-    <div id="img2" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
-        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
-        <img src="https://picsum.photos/id/1016/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Full 2">
-    </div>
-
-    <div id="img3" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
-        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
-        <img src="https://picsum.photos/id/1018/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Full 3">
-    </div>
-
-    <div id="img4" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
-        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
-        <img src="https://picsum.photos/id/1019/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Full 4">
-    </div>
-
-    <div id="img5" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
-        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
-        <img src="https://picsum.photos/id/1020/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Full 5">
-    </div>
-
-    <div id="img6" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
-        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
-        <img src="https://picsum.photos/id/1024/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Full 6">
-    </div>
-
-    <div id="img7" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
-        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
-        <img src="https://picsum.photos/id/1025/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Full 7">
-    </div>
-
-    <div id="img8" class="lightbox position-fixed top-0 start-0 w-100 h-100 z-3 bg-dark bg-opacity-75 justify-content-center align-items-center">
-        <a href="#!" class="position-absolute top-0 end-0 p-4 text-white text-decoration-none display-4 lh-1" style="z-index: 1050;">&times;</a>
-        <img src="https://picsum.photos/id/237/1200/900" class="img-fluid rounded shadow-lg" style="max-height: 90vh; max-width: 90vw;" alt="Full 8">
-    </div>
-
-</body>
-</html>
+</section>
