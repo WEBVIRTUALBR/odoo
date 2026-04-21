@@ -393,13 +393,19 @@
 <div id="wvse_video_embed_header" style="font-size:16px;font-weight:700;color:#1A1018;margin-bottom:12px;">Module Walkthrough Video</div>
 <div style="max-width: 1540px; margin: 0 auto; width: 100%;">
     
-    <div class="ratio ratio-16x9 embed-responsive embed-responsive-16by9" id="wvse_video_embed_container" style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(113,75,103,0.12); background-color: #000;">
+    <div class="media_iframe_video" data-oe-expression="https://www.youtube.com/embed/pwxtQrSYZ6I?rel=0" style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(113,75,103,0.12); background-color: #000; width: 100%;">
         
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pwxtQrSYZ6I?rel=0&amp;modestbranding=1&amp;playsinline=1" allowfullscreen="allowfullscreen" frameborder="0" style="width: 100%; height: 100%;"></iframe>
-
+        <div class="css_editable_mode_display"></div>
+        <div class="media_iframe_video_size" contenteditable="false"></div>
+        
+        <iframe width="1540" height="866" allowfullscreen="allowfullscreen" frameborder="0" src="https://www.youtube.com/embed/pwxtQrSYZ6I?rel=0&amp;modestbranding=1&amp;playsinline=1" style="display: block; width: 100%; aspect-ratio: 16/9; max-width: 100%;"></iframe>
+        
     </div>
+    
 </div>
-<div id="wvse_video_embed_note" style="margin-top:12px;font-size:12px;color:#8A7488;line-height:1.7;">This block now declares an explicit 16:9 area before the iframe finishes sizing. If the preview frame still looks soft before playback, the remaining limitation comes from the thumbnail that YouTube serves to Odoo's video cover layer.</div>
+
+<div id="wvse_video_embed_note" style="margin-top: 12px; font-size: 12px; color: #8A7488; text-align: center;">
+    This block automatically adjusts to fit the screen while preserving the high-definition preview.
 </div>
 </div>
 <div aria-labelledby="wvse_tab_link_docs" class="tab-pane fade" id="wvse-tab-docs" role="tabpanel">
