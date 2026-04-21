@@ -391,10 +391,13 @@
 <div id="wvse_video_section_intro" style="margin-bottom:16px;font-size:13px;color:#8A7488;line-height:1.8;">Embedded YouTube preview using the same Odoo store compatible pattern seen in other apps, with a direct iframe and a full-width media container.</div>
 <div id="wvse_video_embed_shell" style="border:1px solid rgba(113,75,103,0.13);border-radius:18px;padding:18px;background-color:#FFFFFF;">
 <div id="wvse_video_embed_header" style="font-size:16px;font-weight:700;color:#1A1018;margin-bottom:12px;">Module Walkthrough Video</div>
-<div class="media_iframe_video" data-oe-expression="https://www.youtube.com/embed/pwxtQrSYZ6I?si=5Ug1DtS3bBlzjSoe&amp;rel=0&amp;autoplay=0" id="wvse_video_embed_container" style="border-radius:14px;overflow:hidden;border:1px solid rgba(113,75,103,0.12);background-color:#000;">
-<div class="css_editable_mode_display" id="wvse_video_embed_display"></div>
-<div class="media_iframe_video_size" contenteditable="false" id="wvse_video_embed_size"></div>
-<iframe allowfullscreen="allowfullscreen" aria-label="Media video" frameborder="0" id="wvse_video_iframe" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/pwxtQrSYZ6I?si=5Ug1DtS3bBlzjSoe&amp;rel=0&amp;autoplay=0&amp;vq=hd1080&amp;modestbranding=1&amp;playsinline=1" style="display:block;width:100%;min-height:620px;"></iframe>
+<div class="media_iframe_video" data-oe-expression="https://www.youtube.com/embed/pwxtQrSYZ6I?si=5Ug1DtS3bBlzjSoe&amp;rel=0&amp;autoplay=0" id="wvse_video_embed_container" style="position: relative; border-radius: 14px; overflow: hidden; border: 1px solid rgba(113,75,103,0.12); background-color: #000; aspect-ratio: 16/9;">
+    
+    <div class="css_editable_mode_display" id="wvse_video_embed_display"></div>
+    <div class="media_iframe_video_size" contenteditable="false" id="wvse_video_embed_size"></div>
+    
+    <iframe width="1920" height="1080" allowfullscreen="allowfullscreen" aria-label="Media video" frameborder="0" id="wvse_video_iframe" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/pwxtQrSYZ6I?si=5Ug1DtS3bBlzjSoe&amp;rel=0&amp;autoplay=0&amp;modestbranding=1&amp;playsinline=1" style="display: block; width: 100%; height: 100%; min-height: 620px;"></iframe>
+
 </div>
 <div id="wvse_video_embed_note" style="margin-top:12px;font-size:12px;color:#8A7488;line-height:1.7;">This block uses the same embedded pattern commonly rendered by the Odoo store. If the preview frame still looks soft before playback, that usually comes from the YouTube preview image served by YouTube itself rather than from the surrounding HTML.</div>
 </div>
