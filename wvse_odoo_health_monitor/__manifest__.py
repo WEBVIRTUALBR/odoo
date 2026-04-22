@@ -52,7 +52,7 @@ Technical Notes
 - Published on Odoo Apps
 - Use Community or Enterprise depending on declared dependencies
 """,
-    'author': 'Webvirtual Soluções Empresariais',
+    'author': 'Webvirtual',
     'maintainer': 'Webvirtual',
     'website': 'https://www.webvirtual.com.br',
     'support': 'odoo@webvirtual.com.br',
